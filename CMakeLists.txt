@@ -235,3 +235,13 @@ endif()
 if(DAISYKIT_BUILD_PYTHON)
     add_subdirectory(python)
 endif()
+
+install(TARGETS daisykitsdk
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib)
+
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/
+  DESTINATION include
+  PATTERN ".svn" EXCLUDE
+)
